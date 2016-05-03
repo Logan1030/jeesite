@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.wx.dao.WxMenuDao">
+    
+	<sql id="wxMenuColumns">
+		a.id AS "id",
+		a.create_by AS "createBy.id",
+		a.create_date AS "createDate",
+		a.update_by AS "updateBy.id",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag",
+		a.menu_type AS "menuType",
+		a.menu_name AS "menuName",
+		a.menu_key AS "menuKey",
+		a.menu_url AS "menuUrl",
+		a.parent_id AS "parentId",
+		a.is_show AS "isShow"
+	</sql>
+	
+	<sql id="wxMenuJoins">
+	</sql>
+    
+	<select id="get" resultType="WxMenu">
+		SELECT 
+			<include refid="wxMenuColumns"/>
+		FROM wx_menu a
+		<include refid="wxMenuJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="WxMenu">
+		SELECT 
+			<include refid="wxMenuColumns"/>
+		FROM wx_menu a
+		<include refid="wxMenuJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="WxMenu">
+		SELECT 
+			<include refid="wxMenuColumns"/>
+		FROM wx_menu a
+		<include refid="wxMenuJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO wx_menu(
+			id,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag,
+			menu_type,
+			menu_name,
+			menu_key,
+			menu_url,
+			parent_id,
+			is_show
+		) VALUES (
+			#{id},
+			#{createBy.id},
+			#{createDate},
+			#{updateBy.id},
+			#{updateDate},
+			#{remarks},
+			#{delFlag},
+			#{menuType},
+			#{menuName},
+			#{menuKey},
+			#{menuUrl},
+			#{parentId},
+			#{isShow}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE wx_menu SET 	
+			remarks = #{remarks},
+			menu_type = #{menuType},
+			menu_name = #{menuName},
+			menu_key = #{menuKey},
+			menu_url = #{menuUrl},
+			parent_id = #{parentId},
+			is_show = #{isShow}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE wx_menu SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	<select id="findAllMenu" resultType="WxMenu">
+	   select * from wx_menu where parent_id ='' and is_show =1 and del_flag=0
+	</select>
+	<select id="findsubMenu" resultType="WxMenu">
+	   select * from wx_menu where parent_id=#{id} and is_show =1 and del_flag=0
+	</select>
+</mapper>

@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      "jquery-weui",
+      "D:\\"
+    ]
+  ],
+  "_from": "jquery-weui@latest",
+  "_id": "jquery-weui@0.6.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/jquery-weui",
+  "_nodeVersion": "4.2.2",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/jquery-weui-0.6.1.tgz_1461136359022_0.845613366458565"
+  },
+  "_npmUser": {
+    "email": "lihongxun945@gmail.com",
+    "name": "lihongxun945"
+  },
+  "_npmVersion": "2.14.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "jquery-weui",
+    "raw": "jquery-weui",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/jquery-weui/-/jquery-weui-0.6.1.tgz",
+  "_shasum": "62b4c77c9ca0a713c7e9b1c4b0c9501267ec1dc5",
+  "_shrinkwrap": null,
+  "_spec": "jquery-weui",
+  "_where": "D:\\",
+  "author": {
+    "name": "言川"
+  },
+  "bugs": {
+    "url": "https://github.com/lihongxun945/jquery-weui/issues"
+  },
+  "dependencies": {},
+  "description": "为微信 Web 服务量身设计",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-ejs": "^2.1.1",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-header": "^1.7.1",
+    "gulp-less": "^3.0.5",
+    "gulp-uglify": "^1.5.3"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "62b4c77c9ca0a713c7e9b1c4b0c9501267ec1dc5",
+    "tarball": "https://registry.npmjs.org/jquery-weui/-/jquery-weui-0.6.1.tgz"
+  },
+  "gitHead": "c30382a96e6abb072d81857ad7e461ea8c20e463",
+  "homepage": "http://lihongxun945.github.io/jquery-weui/",
+  "keywords": [
+    "jQuery WeUI",
+    "weui",
+    "wechat",
+    "weixin",
+    "css",
+    "less",
+    "mobile",
+    "jQuery",
+    "Zepto"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "lihongxun945@gmail.com",
+      "name": "lihongxun945"
+    }
+  ],
+  "name": "jquery-weui",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lihongxun945/jquery-weui.git"
+  },
+  "scripts": {},
+  "version": "0.6.1"
+}
