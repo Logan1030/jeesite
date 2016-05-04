@@ -68,7 +68,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 			Session session = UserUtils.getSession();
 			String code = (String)session.getAttribute(ValidateCodeServlet.VALIDATE_CODE);
 			if (token.getCaptcha() == null || !token.getCaptcha().toUpperCase().equals(code)){
-				throw new AuthenticationException("msg:验证码错误, 请重试.");
+				throw new AuthenticationException("msg:验证码错误,  请重试.");
 			}
 		}
 		
