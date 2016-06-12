@@ -832,5 +832,7 @@ public class JedisUtils {
 	public static Object toObject(byte[] bytes){
 		return ObjectUtils.unserialize(bytes);
 	}
-
+    public void add(){
+    	
+    }
 }
