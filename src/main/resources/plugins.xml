@@ -6,7 +6,7 @@
     <plugin source="signavio.js" name="Signavio.Plugins.Loading" />
 
     <!-- following plugins require Ext -->    
-    <plugin source="toolbar.js" name="ORYX.Plugins.Toolbar" />
+     <plugin source="toolbar.js" name="ORYX.Plugins.Toolbar" />
     <plugin source="shapemenu.js" name="ORYX.Plugins.ShapeMenuPlugin">
       <property group="Alignment" align="Oryx_Top" />
       <property group="Edit" align="Oryx_Left" />         
