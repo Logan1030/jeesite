@@ -68,7 +68,7 @@
 		</repository> -->
 	    <repository>
 		    <id>thirdparty</id>
-		    <url>http://192.168.5.127:8081/nexus/content/repositories/thirdparty</url>
+		    <url>http://192.168.5.213:8081/nexus/content/repositories/thirdparty</url>
 	    </repository>
 		<repository>
             <id>oschina-repos</id>
