@@ -717,7 +717,21 @@
 					<showWarnings>true</showWarnings>
 				</configuration>
 			</plugin>
-			
+			<plugin>
+			    <groupId>org.codehaus.cargo</groupId>
+			    <artifactId>cargo-maven2-plugin</artifactId>
+			    <version>1.5.0</version>
+			    <configuration>
+			      <container>
+			        <containerId>tomcat8x</containerId>
+			        <home>/usr/local/tomcat8</home>
+			      </container>
+			      <configuration>
+			         <type>standalone</type>
+			         <home>${project.build.directory}/tomcat8x</home>
+			      </configuration>
+			    </configuration>
+			</plugin>
 			<!-- JSP 预编译插件  jspweb.xml
 			<plugin>
 				<groupId>org.jasig.mojo.jspc</groupId>
