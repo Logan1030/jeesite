@@ -716,7 +716,8 @@
 					<target>${jdk.version}</target>
 					<showWarnings>true</showWarnings>
 				</configuration>
-			</plugin>
+			 </plugin>
+			<!-- auto depoly --> 
 			<plugin>
 			    <groupId>org.codehaus.cargo</groupId>
 			    <artifactId>cargo-maven2-plugin</artifactId>
