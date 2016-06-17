@@ -967,6 +967,14 @@
 			              <extractDir>${project.build.directory}/extracts</extractDir>
 			          </zipUrlInstaller>
 			      </container>
+			     <configuration>
+			         <type>standalone</type>
+			         <properties>
+                           <cargo.servlet.port>8082</cargo.servlet.port>
+                           <cargo.tomcat.ajp.port>8099</cargo.tomcat.ajp.port>
+                           <cargo.hostname>localhost</cargo.hostname>
+                     </properties>
+			      </configuration>
 			  </configuration>
 			  <executions>
 			      <execution>
