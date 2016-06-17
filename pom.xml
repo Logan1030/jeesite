@@ -967,7 +967,14 @@
 			              <extractDir>${project.build.directory}/extracts</extractDir>
 			          </zipUrlInstaller>
 			      </container>
-			       
+			      <configuration>
+			         <type>standalone</type>
+			         <home>${project.build.directory}/tomcat7</home>
+			         <properties>
+                           <cargo.servlet.port>8082</cargo.servlet.port>
+                           <cargo.tomcat.ajp.port>8099</cargo.tomcat.ajp.port>
+                     </properties>
+			      </configuration>
 			  </configuration>
 			  <executions>
 			      <execution>
@@ -977,6 +984,7 @@
 			              <goal>start</goal>
 			          </goals>
 			      </execution>
+			      <!-- 
 			      <execution>
 			          <id>stop-tomcat</id>
 			          <phase>post-integration-test</phase>
@@ -984,6 +992,7 @@
 			              <goal>stop</goal>
 			          </goals>
 			      </execution>
+			       -->
 			  </executions>
 			</plugin>
 			<!-- 使用cargo自动化部署 
