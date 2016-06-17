@@ -719,9 +719,9 @@
 			 </plugin>
 			<!-- 使用cargo自动化部署 -->
 			<plugin>
-			    <groupId>org.codehaus.cargo</groupId>
-			    <artifactId>cargo-maven2-plugin</artifactId>
-			    <version>1.5.0</version>
+			    <groupId>org.codehaus.cargo</groupId>  
+                <artifactId>cargo-maven2-plugin</artifactId>  
+                <version>1.2.3</version>  
 			    <configuration>
 			      <container>
 			        <containerId>tomcat8x</containerId>
@@ -729,7 +729,7 @@
 			      </container>
 			      <configuration>
 			         <type>standalone</type>
-			         <home>${project.build.directory}/tomcat8x</home>
+			         <home>${project.build.directory}/tomcat8</home>
 			         <properties>
                            <!-- 根据报错看哪些端口已被使用，使用则自定义另一个 -->
                            <cargo.servlet.port>8082</cargo.servlet.port>
