@@ -717,7 +717,7 @@
 					<showWarnings>true</showWarnings>
 				</configuration>
 			 </plugin>
-			<!-- auto depoly --> 
+			<!-- 使用cargo自动化部署 -->
 			<plugin>
 			    <groupId>org.codehaus.cargo</groupId>
 			    <artifactId>cargo-maven2-plugin</artifactId>
@@ -730,6 +730,11 @@
 			      <configuration>
 			         <type>standalone</type>
 			         <home>${project.build.directory}/tomcat8x</home>
+			         <properties>
+                           <!-- 根据报错看哪些端口已被使用，使用则自定义另一个 -->
+                           <cargo.servlet.port>8082</cargo.servlet.port>
+                           <cargo.tomcat.ajp.port>8099</cargo.tomcat.ajp.port>
+                     </properties>
 			      </configuration>
 			    </configuration>
 			</plugin>
