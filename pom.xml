@@ -967,6 +967,14 @@
 			              <extractDir>${project.build.directory}/extracts</extractDir>
 			          </zipUrlInstaller>
 			      </container>
+			      <configuration>
+			         <type>standalone</type>
+			         <home>${project.build.directory}/tomcat8</home>
+			         <properties>
+                           <cargo.servlet.port>8082</cargo.servlet.port>
+                           <cargo.tomcat.ajp.port>8099</cargo.tomcat.ajp.port>
+                     </properties>
+			      </configuration>
 			  </configuration>
 			  <executions>
 			      <execution>
@@ -994,7 +1002,6 @@
 			      <container>
 			        <containerId>tomcat8x</containerId>
 			        <home>/usr/local/tomcat8</home>
-			        <
 			      </container>
 			      <configuration>
 			         <type>standalone</type>
