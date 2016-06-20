@@ -1006,7 +1006,7 @@
 			      </container>
 			     <configuration>
 			         <type>standalone</type>
-			         <home>/opt/apache-tomcat-7.0.16</home>
+			         <home>${project.build.directory}/tomcat7x</home>
 			         <properties>
                            <cargo.servlet.port>8083</cargo.servlet.port>
                            <cargo.tomcat.ajp.port>8099</cargo.tomcat.ajp.port>
