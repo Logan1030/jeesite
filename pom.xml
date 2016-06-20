@@ -939,13 +939,13 @@
 				<version>2.6</version>
 			</plugin>
 			
-			<!-- install插件
+			<!-- install插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-install-plugin</artifactId>
 				<version>2.4</version>
 			</plugin>
-			 -->
+			
 			<!-- clean插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -970,6 +970,7 @@
 			  <groupId>org.codehaus.cargo</groupId>
 			  <artifactId>cargo-maven2-plugin</artifactId>
 			  <version>1.2.0</version>
+			   <!--
 			  <executions>
 			      <execution>
 			          <id>start-tomcat</id>
@@ -978,7 +979,6 @@
 			              <goal>start</goal>
 			          </goals>
 			      </execution>
-			      <!-- 
 			      <execution>
 			          <id>stop-tomcat</id>
 			          <phase>post-integration-test</phase>
@@ -986,8 +986,9 @@
 			              <goal>stop</goal>
 			          </goals>
 			      </execution>
-			       -->
+			     
 			  </executions>
+			   -->
 			  <configuration>
 			      <wait>false</wait>
 			      <container>
