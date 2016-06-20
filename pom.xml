@@ -980,13 +980,13 @@
 			    </execution>
 			    <execution>
 			      <id>stop-container</id>
-			      <phase>post-integration-test</phase>
+			      <phase>integration-test</phase>
 			      <goals>
 			        <goal>stop</goal>
 			      </goals>
 			    </execution>
 			    <execution>
-			      <id>stop-container</id>
+			      <id>run-container</id>
 			      <phase>post-integration-test</phase>
 			      <goals>
 			        <goal>run</goal>
