@@ -1004,7 +1004,7 @@
 			         <type>standalone</type>
 			         <home>target/tomcat7x</home>
 			         <properties>
-                           <cargo.servlet.port>8082</cargo.servlet.port>
+                           <cargo.servlet.port>8083</cargo.servlet.port>
                            <cargo.tomcat.ajp.port>8099</cargo.tomcat.ajp.port>
                            <cargo.hostname>192.168.5.167</cargo.hostname>
                      </properties>
