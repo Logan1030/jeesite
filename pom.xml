@@ -854,9 +854,9 @@
 						<!-- userfiles/** --><!-- ,/**/*.jsp -->,
 						test/**
 					</warSourceExcludes>
-					<webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory><!-- 
-					<webXml>${project.basedir}/target/jspweb.xml</webXml> -->
-					<warName>${project.artifactId}-${project.version}</warName>
+					<webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
+					<!--<webXml>${project.basedir}/target/jspweb.xml</webXml> -->
+					<warName>${project.artifactId}</warName>
 				</configuration>
 			</plugin>
 			
