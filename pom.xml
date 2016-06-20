@@ -974,18 +974,19 @@
 			      <container>
 			          <containerId>tomcat7x</containerId>
 			          <zipUrlInstaller>
-			              <url>http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.16/bin/apache-tomcat-7.0.16.zip
-			              </url>
+			              <url>http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.16/bin/apache-tomcat-7.0.16.zip</url>
 			              <downloadDir>${project.build.directory}/downloads</downloadDir>
 			              <extractDir>${project.build.directory}/extracts</extractDir>
 			          </zipUrlInstaller>
+			          <home>${project.build.directory}/extracts</home>
 			      </container>
 			     <configuration>
 			         <type>standalone</type>
+			         <home>target/tomcat7x</home>
 			         <properties>
                            <cargo.servlet.port>8082</cargo.servlet.port>
                            <cargo.tomcat.ajp.port>8099</cargo.tomcat.ajp.port>
-                           <cargo.hostname>localhost</cargo.hostname>
+                           <cargo.hostname>192.168.5.167</cargo.hostname>
                      </properties>
 			      </configuration>
 			  </configuration>
