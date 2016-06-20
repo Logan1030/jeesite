@@ -971,27 +971,27 @@
 			  <artifactId>cargo-maven2-plugin</artifactId>
 			  <version>1.4.5</version>
 			  <executions>
-			      <execution>
-			          <id>tomcat-start</id>
-			          <phase>pre-integration-test</phase>
-			          <goals>
-			              <goal>start</goal>
-			          </goals>
-			      </execution>
-			      <execution>
-			          <id>tomcat-stop</id>
-			          <phase>post-integration-test</phase>
-			          <goals>
-			              <goal>stop</goal>
-			          </goals>
-			      </execution>
-			        <execution>
-			            <id>tomcat-deploy</id>
-			            <phase>package</phase>
-			            <goals>
-			              <goal>deploy</goal>
-			            </goals>
-			        </execution>
+		       <execution>
+			      <id>start-container</id>
+			      <phase>pre-integration-test</phase>
+			      <goals>
+			        <goal>start</goal>
+			      </goals>
+			    </execution>
+			    <execution>
+			      <id>stop-container</id>
+			      <phase>post-integration-test</phase>
+			      <goals>
+			        <goal>stop</goal>
+			      </goals>
+			    </execution>
+		          <!-- <execution>
+		            <id>tomcat-deploy</id>
+		            <phase>package</phase>
+		            <goals>
+		              <goal>deploy</goal>
+		            </goals>
+		          </execution> -->
 			  </executions>
 			  <configuration>
 			      <wait>false</wait>
