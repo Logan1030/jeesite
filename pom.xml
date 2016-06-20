@@ -939,13 +939,13 @@
 				<version>2.6</version>
 			</plugin>
 			
-			<!-- install插件 -->
+			<!-- install插件
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-install-plugin</artifactId>
 				<version>2.4</version>
 			</plugin>
-			
+			 -->
 			<!-- clean插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
