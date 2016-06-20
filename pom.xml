@@ -971,36 +971,27 @@
 			  <artifactId>cargo-maven2-plugin</artifactId>
 			  <version>1.4.5</version>
 			  <executions>
-			      <execution><!--通过"pre-clean"目标取消部署并关闭容器-->  
-				      <id>clean-undeploy</id>  
-				      <phase>pre-clean</phase>  
-				      <goals>
-			           <goal>deployer-undeploy</goal>
-			           <goal>stop</goal>  
-				      </goals>  
-				  </execution>
-			      <execution>
-				      <id>start-container</id>
-				      <phase>pre-integration-test</phase>
-				      <goals>
-				        <goal>start</goal>
-				      </goals>
-				  </execution>
-				  <execution>
-				      <id>stop-container</id>
-				      <phase>post-integration-test</phase>
-				      <goals>
-				        <goal>stop</goal>
-				      </goals>
-				  </execution>
-				  <execution><!-- 通过"install"目标部署到容器并运行-->  
-				      <id>verify-deploy</id>  
-				      <phase>install</phase>  
-				      <goals>
-				        <goal>deployer-deploy</goal>
-				        <goal>start</goal>  
-				      </goals>  
-				  </execution> 
+		       <execution>
+			      <id>start-container</id>
+			      <phase>pre-integration-test</phase>
+			      <goals>
+			        <goal>start</goal>
+			      </goals>
+			    </execution>
+			    <execution>
+			      <id>stop-container</id>
+			      <phase>post-integration-test</phase>
+			      <goals>
+			        <goal>stop</goal>
+			      </goals>
+			    </execution>
+			    <execution>
+			      <id>run-container</id>
+			      <phase>install</phase>
+			      <goals>
+			        <goal>run</goal>
+			      </goals>
+			    </execution>
 			  </executions>
 			  <configuration>
 			      <wait>false</wait>
@@ -1011,6 +1002,7 @@
 			              <downloadDir>${project.build.directory}/downloads</downloadDir>
 			              <extractDir>${project.build.directory}/extracts</extractDir>
 			          </zipUrlInstaller>
+			          <home>${project.build.directory}/extracts/apache-tomcat-7.0.16/apache-tomcat-7.0.16</home>
 			      </container>
 			     <configuration>
 			         <type>standalone</type>
