@@ -1000,9 +1000,7 @@
 				        <goal>deployer-deploy</goal>
 				        <goal>start</goal>  
 				      </goals>  
-				  </execution>  
-				  
-				 
+				  </execution> 
 			  </executions>
 			  <configuration>
 			      <wait>false</wait>
@@ -1013,7 +1011,6 @@
 			              <downloadDir>${project.build.directory}/downloads</downloadDir>
 			              <extractDir>${project.build.directory}/extracts</extractDir>
 			          </zipUrlInstaller>
-			          <home>${project.build.directory}/extracts/apache-tomcat-7.0.16/apache-tomcat-7.0.16</home>
 			      </container>
 			     <configuration>
 			         <type>standalone</type>
