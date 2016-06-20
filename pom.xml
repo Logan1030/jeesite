@@ -970,7 +970,26 @@
 			  <groupId>org.codehaus.cargo</groupId>
 			  <artifactId>cargo-maven2-plugin</artifactId>
 			  <version>1.2.0</version>
+			  <executions>
+			      <execution>
+			          <id>start-tomcat</id>
+			          <phase>pre-integration-test</phase>
+			          <goals>
+			              <goal>start</goal>
+			          </goals>
+			      </execution>
+			      <!-- 
+			      <execution>
+			          <id>stop-tomcat</id>
+			          <phase>post-integration-test</phase>
+			          <goals>
+			              <goal>stop</goal>
+			          </goals>
+			      </execution>
+			       -->
+			  </executions>
 			  <configuration>
+			      <wait>false</wait>
 			      <container>
 			          <containerId>tomcat7x</containerId>
 			          <zipUrlInstaller>
@@ -990,24 +1009,7 @@
                      </properties>
 			      </configuration>
 			  </configuration>
-			  <executions>
-			      <execution>
-			          <id>start-tomcat</id>
-			          <phase>pre-integration-test</phase>
-			          <goals>
-			              <goal>start</goal>
-			          </goals>
-			      </execution>
-			      <!-- 
-			      <execution>
-			          <id>stop-tomcat</id>
-			          <phase>post-integration-test</phase>
-			          <goals>
-			              <goal>stop</goal>
-			          </goals>
-			      </execution>
-			       -->
-			  </executions>
+			  
 			</plugin>
 			<!-- 使用cargo自动化部署 
 			<plugin>
