@@ -969,7 +969,7 @@
 			<plugin>
 			  <groupId>org.codehaus.cargo</groupId>
 			  <artifactId>cargo-maven2-plugin</artifactId>
-			  <version>1.2.0</version>
+			  <version>1.4.5</version>
 			  <executions>
 			      <execution>
 			          <id>start-tomcat</id>
@@ -985,6 +985,13 @@
 			              <goal>stop</goal>
 			          </goals>
 			      </execution>
+			        <execution>
+			            <id>tomcat-deploy</id>
+			            <phase>package</phase>
+			            <goals>
+			              <goal>deploy</goal>
+			            </goals>
+			        </execution>
 			  </executions>
 			  <configuration>
 			      <wait>false</wait>
@@ -999,7 +1006,7 @@
 			      </container>
 			     <configuration>
 			         <type>standalone</type>
-			         <home>target/tomcat7x</home>
+			         <home>/opt/apache-tomcat-7.0.16</home>
 			         <properties>
                            <cargo.servlet.port>8083</cargo.servlet.port>
                            <cargo.tomcat.ajp.port>8099</cargo.tomcat.ajp.port>
