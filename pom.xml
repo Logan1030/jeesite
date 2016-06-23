@@ -999,7 +999,7 @@
 			          <home>${project.build.directory}/extracts/apache-tomcat-8.0.36/apache-tomcat-8.0.36</home>
 			      </container>
 			     <configuration>
-			         <type>existing</type>
+			         <type>standalone</type>
 			         <home>${project.build.directory}/tomcat8x</home>
 			         <properties>
                            <cargo.servlet.port>8083</cargo.servlet.port>
