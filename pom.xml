@@ -985,13 +985,7 @@
 			        <goal>stop</goal>
 			      </goals>
 			    </execution>
-			    <execution>
-			      <id>run-container</id>
-			      <phase>install</phase>
-			      <goals>
-			        <goal>run</goal>
-			      </goals>
-			    </execution>
+			     
 			  </executions>
 			  <configuration>
 			      <wait>false</wait>
@@ -1005,7 +999,7 @@
 			          <home>${project.build.directory}/extracts/apache-tomcat-8.0.36/apache-tomcat-8.0.36</home>
 			      </container>
 			     <configuration>
-			         <type>standalone</type>
+			         <type>existing</type>
 			         <home>${project.build.directory}/tomcat8x</home>
 			         <properties>
                            <cargo.servlet.port>8083</cargo.servlet.port>
