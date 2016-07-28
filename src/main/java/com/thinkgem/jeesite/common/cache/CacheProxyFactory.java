@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
  * @version 0.1 2015年11月19日
  */
 @Component("cacheProxyFactory")
-public final class CacheProxyFactory {
+public class CacheProxyFactory {
 	
 	private static CacheProxy cacheProxy;
 	
-	private CacheProxyFactory() {
+	public  CacheProxyFactory() {
 	}
 	
 	public CacheProxy getCacheProxy() {

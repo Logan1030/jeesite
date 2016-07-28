@@ -10,6 +10,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
@@ -20,6 +21,8 @@ import com.thinkgem.jeesite.common.aop.struct.AuthenticationType;
 import com.thinkgem.jeesite.common.cache.AspectUtil;
 import com.thinkgem.jeesite.common.cache.CacheProxy;
 import com.thinkgem.jeesite.common.cache.CacheProxyFactory;
+
+ 
  
 
 /**

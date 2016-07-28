@@ -7,6 +7,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 
 import com.thinkgem.jeesite.common.aop.annotation.DisableDuplicateSubmission;
 import com.thinkgem.jeesite.common.aop.exception.AuthenticationException;
@@ -30,7 +31,7 @@ public class DefaultAuthenticationProccessor extends AbstractAuthenticationProcc
 	@Autowired
 	@Qualifier("cacheProxyFactory")
 	private CacheProxyFactory cacheProxyFactory;
-
+     
 	public CacheProxyFactory getCacheProxyFactory() {
 		return cacheProxyFactory;
 	}
