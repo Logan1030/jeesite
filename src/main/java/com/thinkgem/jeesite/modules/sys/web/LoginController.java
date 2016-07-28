@@ -47,11 +47,12 @@ public class LoginController extends BaseController{
 	/**
 	 * 管理登录
 	 */
-	@RequestMapping(value = "${adminPath}/login", method = RequestMethod.GET)
 	@GenerateToken
+	@RequestMapping(value = "${adminPath}/login", method = RequestMethod.GET)
 	public String login(HttpServletRequest request, HttpServletResponse response, Model model) {
 		Principal principal = UserUtils.getPrincipal();
-
+        
+		logger.info("get..");
 		
 		if (logger.isDebugEnabled()){
 			logger.debug("login, active session size: {}", sessionDAO.getActiveSessions(false).size());
@@ -78,6 +79,7 @@ public class LoginController extends BaseController{
 	/**
 	 * 登录失败，真正登录的POST请求由Filter完成
 	 */
+	@GenerateToken
 	@RequestMapping(value = "${adminPath}/login", method = RequestMethod.POST)
 	public String loginFail(HttpServletRequest request, HttpServletResponse response, Model model) {
 		Principal principal = UserUtils.getPrincipal();
