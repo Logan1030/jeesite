@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.google.common.collect.Maps;
+import com.thinkgem.jeesite.common.aop.annotation.DisableDuplicateSubmission;
 import com.thinkgem.jeesite.common.aop.annotation.GenerateToken;
 import com.thinkgem.jeesite.common.aop.annotation.ValidateToken;
 import com.thinkgem.jeesite.common.config.Global;
@@ -49,6 +50,7 @@ public class LoginController extends BaseController{
 	 * 管理登录
 	 */
 	@GenerateToken
+	@DisableDuplicateSubmission
 	@RequestMapping(value = "${adminPath}/login", method = RequestMethod.GET)
 	public String login(HttpServletRequest request, HttpServletResponse response, Model model) {
 		Principal principal = UserUtils.getPrincipal();
