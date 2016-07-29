@@ -1,6 +1,8 @@
 package com.thinkgem.jeesite.common.aop.processor;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.thinkgem.jeesite.common.aop.exception.AuthenticationException;
 import com.thinkgem.jeesite.common.aop.struct.AuthenticationType;
@@ -19,7 +21,7 @@ import com.thinkgem.jeesite.common.aop.struct.AuthenticationType;
 public abstract class AbstractAuthenticationProccessor implements IAspectAuthenticationProcessor {
 	
 	private Object lock = new Object();
-
+	protected Logger logger = LoggerFactory.getLogger(getClass());
 	/**
 	 * 抽象的认证方法，由子类实现
 	 * <p>
@@ -72,6 +74,7 @@ public abstract class AbstractAuthenticationProccessor implements IAspectAuthent
 	public void beforeProcess(ProceedingJoinPoint point) throws AuthenticationException {
 		synchronized(lock) {
 			// 进行认证，通过则继续处理
+			logger.info("进行认证，通过则继续处理");
 			if (!doAuthentication(point)) {
 				throw new AuthenticationException(AuthenticationType.AUTHENTICATION_FAILED, "authentication failed");
 			}

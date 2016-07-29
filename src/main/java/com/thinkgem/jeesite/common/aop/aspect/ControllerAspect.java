@@ -1,7 +1,9 @@
 package com.thinkgem.jeesite.common.aop.aspect;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -47,20 +49,26 @@ public class ControllerAspect {
     @Before("controllerPointcut()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
         // 接收到请求，记录请求内容
+    	logger.info("接收到请求，记录请求内容");
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
+        Map<String, Object>maps=request.getParameterMap();
+        Iterator<String> keys = maps.keySet().iterator();
 
-        // 记录下请求内容
-        logger.debug("URL : " + request.getRequestURL().toString());
-        logger.debug("HTTP_METHOD : " + request.getMethod());
-        logger.debug("IP : " + request.getRemoteAddr());
-        logger.debug("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+        while(keys.hasNext()) {
+        String key = (String) keys.next();
+        Object value=maps.get(key);
+        System.out.println("键"+key+"="+"值"+value);
+
+        } 
+        logger.info(request.getParameter("revision"));
         logger.debug("ARGS : " + Arrays.toString(joinPoint.getArgs()));
 
     }
     @AfterReturning(returning = "ret", pointcut = "controllerPointcut()")
     public void doAfterReturning(Object ret) throws Throwable {
         // 处理完请求，返回内容
+    	logger.info("处理完请求，返回内容");
         logger.debug("RESPONSE : " + ret);
     }
 	/**
@@ -78,15 +86,16 @@ public class ControllerAspect {
 	 */
 	@Around("controllerPointcut()")
 	public Object around(ProceedingJoinPoint pjp) throws Throwable {
+		 
+		logger.info("在切入点前后切入内容，并自己控制何时执行切入点自身的内容");
 		for (ControllerAspectProcessor p : getProcessors()) {
-			logger.debug("CLASS_METHOD : " + pjp.getSignature().getDeclaringTypeName() + "." + pjp.getSignature().getName());
-		    logger.debug("ARGS : " + Arrays.toString(pjp.getArgs()));
+		 
 			pjp.getTarget();
 			logger.info("p:"+p);
 			if (p != null) {
-			
+			  
 				Object o = p.doProcess(pjp);
-
+                logger.info("00000:"+o); 
 				if (o != null) {
 					return o;
 				}

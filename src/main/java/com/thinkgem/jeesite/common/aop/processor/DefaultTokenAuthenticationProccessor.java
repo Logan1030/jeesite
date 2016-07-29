@@ -63,7 +63,7 @@ public class DefaultTokenAuthenticationProccessor extends AbstractAuthentication
 		// 获取方法进行反射
 		MethodSignature signature = (MethodSignature) point.getSignature();
 		Method method = signature.getMethod();
-
+        logger.info("进行token验证：");
 		// 进行token验证
 		if (method.isAnnotationPresent(ValidateToken.class)) {
 			HttpServletRequest request = (HttpServletRequest) AspectUtil.getObject(point, HttpServletRequest.class);
@@ -95,11 +95,12 @@ public class DefaultTokenAuthenticationProccessor extends AbstractAuthentication
 	protected void afterAuthenticationReturning(ProceedingJoinPoint point, Object proceed)
 			throws AuthenticationException {
 		String token = UUID.randomUUID().toString().replaceAll("-", "");
-
+        logger.info("token:"+token);
+        logger.info(proceed.toString());
 		ModelAndView mv = proceed instanceof ModelAndView ? (ModelAndView) proceed : null;
 		
 		HttpServletRequest request = AspectUtil.getHttpServletRequest();
-
+        logger.info("mv:"+mv);
 		if (mv != null) {
 			// 返回值如果为ModelAndView，则加入新的token
 			mv.addObject(AUTHENTICATION_TOKEN_KEY, token);
@@ -114,7 +115,7 @@ public class DefaultTokenAuthenticationProccessor extends AbstractAuthentication
 		} else {
 			request.setAttribute(AUTHENTICATION_TOKEN_KEY, token);
 		}
-
+            
 		CacheProxy cache = getCacheProxy();
 		cache.put(token, token, cacheExpiredTime);
 	}
