@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -20,7 +22,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * @version 0.1 2016年1月12日
  */
 public class AspectUtil {
-
+	protected static Logger logger = LoggerFactory.getLogger(AspectUtil.class);
 	/**
 	 * 获取用户唯一请求ID
 	 * <p>
@@ -55,6 +57,8 @@ public class AspectUtil {
 		HttpServletRequest request = getHttpServletRequest();
 		Assert.notNull(request, "HttpServletRequest object cannot null");
 		String identify = point.getSignature().toString();
+		 logger.info("表示访问某个Controller+Method的唯一标识");
+		 logger.info(identify);
 		// 表示访问某个Controller+Method的唯一标识
 		return identify;
 	}

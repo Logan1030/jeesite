@@ -118,6 +118,8 @@ public class DefaultTokenAuthenticationProccessor extends AbstractAuthentication
             
 		CacheProxy cache = getCacheProxy();
 		cache.put(token, token, cacheExpiredTime);
+		logger.info("token:"+cache.get(token));
+		
 	}
 
 	public long getCacheExpiredTime() {

@@ -67,7 +67,7 @@ public class TransientTokenAuthenticationProccessor extends AbstractAuthenticati
 		CacheProxy cache = getCacheProxy();
 		String token = cache.get(identify);
 		ModelAndView mv = proceed instanceof ModelAndView ? (ModelAndView) proceed : null;
-
+        logger.info("重复提交"+mv);
 		if (mv != null) {
 			// 返回值如果为ModelAndView，则加入新的token
 			mv.addObject(AUTHENTICATION_TOKEN_KEY, token);
